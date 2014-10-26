@@ -42,7 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         var cfError: Unmanaged<CFError>?
-        if (SMJobBless(kSMDomainSystemLaunchd, "AuthorHelper", aref, &cfError) == 0) {
+        if (SMJobBless(kSMDomainSystemLaunchd, "net.caddr.Author.Helper", aref, &cfError) == 0) {
             print("SMJobBless failed, error = \(cfError!.takeUnretainedValue())")
         }
     }

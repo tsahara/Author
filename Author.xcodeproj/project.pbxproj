@@ -12,7 +12,7 @@
 		1F1C717E19FB69F20014DA2B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C717C19FB69F20014DA2B /* MainMenu.xib */; };
 		1F1C718A19FB69F20014DA2B /* AuthorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C718919FB69F20014DA2B /* AuthorTests.swift */; };
 		1F1C71AF19FB6B870014DA2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C71AE19FB6B870014DA2B /* main.m */; };
-		1F1C71B719FB6FB20014DA2B /* AuthorHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1C71AC19FB6B870014DA2B /* AuthorHelper */; };
+		1F1C71B719FB6FB20014DA2B /* net.caddr.Author.Helper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1C71AC19FB6B870014DA2B /* net.caddr.Author.Helper */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 			dstPath = Contents/Library/LaunchServices;
 			dstSubfolderSpec = 1;
 			files = (
-				1F1C71B719FB6FB20014DA2B /* AuthorHelper in CopyFiles */,
+				1F1C71B719FB6FB20014DA2B /* net.caddr.Author.Helper in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,7 @@
 		1F1C718319FB69F20014DA2B /* AuthorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1C718819FB69F20014DA2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1C718919FB69F20014DA2B /* AuthorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorTests.swift; sourceTree = "<group>"; };
-		1F1C71AC19FB6B870014DA2B /* AuthorHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AuthorHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1C71AC19FB6B870014DA2B /* net.caddr.Author.Helper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = net.caddr.Author.Helper; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1C71AE19FB6B870014DA2B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F1C71B819FBC43F0014DA2B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1C71B919FBC7720014DA2B /* launchd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = launchd.plist; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 			children = (
 				1F1C717319FB69F20014DA2B /* Author.app */,
 				1F1C718319FB69F20014DA2B /* AuthorTests.xctest */,
-				1F1C71AC19FB6B870014DA2B /* AuthorHelper */,
+				1F1C71AC19FB6B870014DA2B /* net.caddr.Author.Helper */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,9 +200,9 @@
 			productReference = 1F1C718319FB69F20014DA2B /* AuthorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1F1C71AB19FB6B870014DA2B /* AuthorHelper */ = {
+		1F1C71AB19FB6B870014DA2B /* net.caddr.Author.Helper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1F1C71B219FB6B870014DA2B /* Build configuration list for PBXNativeTarget "AuthorHelper" */;
+			buildConfigurationList = 1F1C71B219FB6B870014DA2B /* Build configuration list for PBXNativeTarget "net.caddr.Author.Helper" */;
 			buildPhases = (
 				1F1C71A819FB6B870014DA2B /* Sources */,
 				1F1C71A919FB6B870014DA2B /* Frameworks */,
@@ -212,9 +212,9 @@
 			);
 			dependencies = (
 			);
-			name = AuthorHelper;
+			name = net.caddr.Author.Helper;
 			productName = AuthorHelper;
-			productReference = 1F1C71AC19FB6B870014DA2B /* AuthorHelper */;
+			productReference = 1F1C71AC19FB6B870014DA2B /* net.caddr.Author.Helper */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -253,7 +253,7 @@
 			targets = (
 				1F1C717219FB69F20014DA2B /* Author */,
 				1F1C718219FB69F20014DA2B /* AuthorTests */,
-				1F1C71AB19FB6B870014DA2B /* AuthorHelper */,
+				1F1C71AB19FB6B870014DA2B /* net.caddr.Author.Helper */,
 			);
 		};
 /* End PBXProject section */
@@ -312,7 +312,7 @@
 		};
 		1F1C71B419FB6DEF0014DA2B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1F1C71AB19FB6B870014DA2B /* AuthorHelper */;
+			target = 1F1C71AB19FB6B870014DA2B /* net.caddr.Author.Helper */;
 			targetProxy = 1F1C71B319FB6DEF0014DA2B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -536,7 +536,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1F1C71B219FB6B870014DA2B /* Build configuration list for PBXNativeTarget "AuthorHelper" */ = {
+		1F1C71B219FB6B870014DA2B /* Build configuration list for PBXNativeTarget "net.caddr.Author.Helper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1F1C71B019FB6B870014DA2B /* Debug */,

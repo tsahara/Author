@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>AuthorHelper</string>
+	<string>net.caddr.Author.Helper</string>
 </dict>
 </plist>

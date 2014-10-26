@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>AuthorHelper</string>
+	<string>net.caddr.Author.Helper</string>
 	<key>CFBundleName</key>
 	<string>AuthorHelper</string>
 	<key>SMAuthorizedClients</key>
