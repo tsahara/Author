@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ServiceManagement
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -16,6 +17,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
+        print("hoge\n")
+        
+        var status: OSStatus
+
+        // Creating an Authorization Reference Without Rights
+        var aref = AuthorizationRef()
+        status = AuthorizationCreate(nil, nil, AuthorizationFlags(kAuthorizationFlagDefaults), &aref)
+        if (status != OSStatus(errAuthorizationSuccess)) {
+            print("AuthorizationCreate failed.")
+            return;
+        }
+
+        var aitem = AuthorizationItem(name: kSMRightBlessPrivilegedHelper, valueLength: 0, value: nil, flags: 0)
+        var arights = AuthorizationRights(count: 1, items: &aitem)
+        var aflags = AuthorizationFlags(kAuthorizationFlagDefaults +
+            kAuthorizationFlagInteractionAllowed +
+            kAuthorizationFlagPreAuthorize +
+            kAuthorizationFlagExtendRights)
+        status = AuthorizationCopyRights(aref, &arights, nil, aflags, nil)
+        if (status != OSStatus(errAuthorizationSuccess)) {
+            print("AuthorizationCopyRights failed.")
+            return;
+        }
+
+        var cfError: Unmanaged<CFError>?
+        if (SMJobBless(kSMDomainSystemLaunchd, "AuthorHelper", aref, &cfError) == 0) {
+            print("SMJobBless failed, error = \(cfError!.takeUnretainedValue())")
+        }
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

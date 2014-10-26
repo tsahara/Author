@@ -30,5 +30,10 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SMPrivilegedExecutables</key>
+	<dict>
+		<key>AuthorHelper</key>
+		<string>identifier AuthorHelper and anchor apple generic and certificate leaf[subject.CN] = &quot;Mac Developer: Tomoyuki Sahara (96J5HTC9TP)&quot; and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+	</dict>
 </dict>
 </plist>
