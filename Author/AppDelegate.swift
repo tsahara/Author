@@ -9,6 +9,12 @@
 import Cocoa
 import ServiceManagement
 
+let helper_service_name = "net.caddr.Author.Helper"
+
+@objc protocol AuthorHelperProtocol {
+    func getVersionWithReply(withReply: (NSString) -> Void)
+}
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -44,7 +50,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var cfError: Unmanaged<CFError>?
         if (SMJobBless(kSMDomainSystemLaunchd, "net.caddr.Author.Helper", aref, &cfError) == 0) {
             print("SMJobBless failed, error = \(cfError!.takeUnretainedValue())")
+            return
         }
+        
+        let xpc = NSXPCConnection(machServiceName: helper_service_name, options: NSXPCConnectionOptions.Privileged)
+        xpc.remoteObjectInterface = NSXPCInterface(`protocol`: AuthorHelperProtocol.self)
+        xpc.invalidationHandler = { println("XPC invalidated") }
+        xpc.resume()
+        println(xpc)
+        
+        // getVersionAction
+        var proxy = xpc.remoteObjectProxyWithErrorHandler({ err in println("proxy=>\(err)") }) as AuthorHelperProtocol
+        proxy.getVersionWithReply({ str in println("get version => \(str)") })
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

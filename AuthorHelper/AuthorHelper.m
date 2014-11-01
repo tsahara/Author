@@ -1,0 +1,51 @@
+//
+//  AuthorHelper.m
+//  Author
+//
+//  Created by Tomoyuki Sahara on 11/1/14.
+//  Copyright (c) 2014 Tomoyuki Sahara. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+#import "AuthorHelper.h"
+
+@interface AuthorHelper () <NSXPCListenerDelegate, AuthorHelperProtocol>
+
+@property (atomic, strong, readwrite) NSXPCListener *listener;
+
+@end
+
+@implementation AuthorHelper
+
+- (id)init
+{
+    self = [super init];
+    if (self != nil) {
+        self->_listener = [[NSXPCListener alloc] initWithMachServiceName:@"net.caddr.Author.Helper"];
+        self->_listener.delegate = self;
+    }
+    return self;
+}
+
+- (void)run
+{
+    [self.listener resume];
+    [[NSRunLoop currentRunLoop] run];
+}
+
+- (BOOL)listener:(NSXPCListener *)listener shouldAcceptNewConnection:(NSXPCConnection *)newConnection
+{
+    newConnection.exportedInterface = [NSXPCInterface interfaceWithProtocol:@protocol(AuthorHelperProtocol)];
+    newConnection.exportedObject = self;
+    [newConnection resume];
+
+    return YES;
+}
+
+- (void)getVersionWithReply:(void(^)(NSString * version))reply
+{
+    reply([[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]);
+}
+
+@end

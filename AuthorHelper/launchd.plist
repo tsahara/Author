@@ -4,5 +4,10 @@
 <dict>
 	<key>Label</key>
 	<string>net.caddr.Author.Helper</string>
+	<key>MachServices</key>
+	<dict>
+		<key>net.caddr.Author.Helper</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

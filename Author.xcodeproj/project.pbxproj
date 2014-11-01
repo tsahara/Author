@@ -13,6 +13,7 @@
 		1F1C718A19FB69F20014DA2B /* AuthorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C718919FB69F20014DA2B /* AuthorTests.swift */; };
 		1F1C71AF19FB6B870014DA2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C71AE19FB6B870014DA2B /* main.m */; };
 		1F1C71B719FB6FB20014DA2B /* net.caddr.Author.Helper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1C71AC19FB6B870014DA2B /* net.caddr.Author.Helper */; };
+		1F1C71E01A04C2680014DA2B /* AuthorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C71DF1A04C2680014DA2B /* AuthorHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		1F1C71AE19FB6B870014DA2B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F1C71B819FBC43F0014DA2B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1C71B919FBC7720014DA2B /* launchd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = launchd.plist; sourceTree = "<group>"; };
+		1F1C71DF1A04C2680014DA2B /* AuthorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorHelper.m; sourceTree = "<group>"; };
+		1F1C71E11A04C2790014DA2B /* AuthorHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorHelper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				1F1C71AE19FB6B870014DA2B /* main.m */,
+				1F1C71DF1A04C2680014DA2B /* AuthorHelper.m */,
+				1F1C71E11A04C2790014DA2B /* AuthorHelper.h */,
 				1F1C71B819FBC43F0014DA2B /* Info.plist */,
 				1F1C71B919FBC7720014DA2B /* launchd.plist */,
 			);
@@ -298,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F1C71E01A04C2680014DA2B /* AuthorHelper.m in Sources */,
 				1F1C71AF19FB6B870014DA2B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

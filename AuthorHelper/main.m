@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AuthorHelper.h"
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        NSLog(@"Helper Start!");
+        [[[AuthorHelper alloc] init] run];
     }
-    return 0;
+    return EXIT_FAILURE;
 }
