@@ -14,7 +14,9 @@
 
 @required
 
-- (void)getVersionWithReply:(void(^)(NSString * version))reply;
+- (void)getVersion:(void(^)(NSString * version))reply;
+
+- (void)openBPF:(void(^)(int))reply;
 
 @end
 

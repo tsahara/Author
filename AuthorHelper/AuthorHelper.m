@@ -10,6 +10,11 @@
 
 #import "AuthorHelper.h"
 
+#include <sys/types.h>
+#include <sys/time.h>
+#include <sys/ioctl.h>
+#include <net/bpf.h>
+
 @interface AuthorHelper () <NSXPCListenerDelegate, AuthorHelperProtocol>
 
 @property (atomic, strong, readwrite) NSXPCListener *listener;
@@ -43,9 +48,14 @@
     return YES;
 }
 
-- (void)getVersionWithReply:(void(^)(NSString * version))reply
+- (void)getVersion:(void(^)(NSString * version))reply
 {
     reply([[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]);
+}
+
+- (void)openBPF:(void(^)(int))reply;
+{
+    reply(3);
 }
 
 @end
